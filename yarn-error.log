@@ -1,0 +1,59 @@
+Arguments: 
+  D:\develop-env\nodejs\node.exe D:\develop-env\nodejs\node_modules\yarn\bin\yarn.js add babel-cli
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\works\xampp\apache\bin;D:\works\xampp\mysql\bin;D:\works\mongoDB\bin;D:\develop applications\ArcGIS10.2\instantclient_11_2;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;D:\works\jdk\bin;D:\works\jdk\jre\bin;D:\develop applications\Git\Git\bin;D:\develop applications\Git\Git\cmd;D:\develop applications\Git\Git\mingw64\bin;D:\develop applications\Git\Git\usr\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\works\nodejs;D:\works\python\python3;D:\works\python\python2;D:\works\mingw\bin;D:\works\AndroidSdk\tools;D:\works\AndroidSdk\platform-tools;D:\works\xampp\apache\conf;D:\develop applications\ffmpeg\bin;D:\develop applications\VScode\Microsoft VS Code\bin;C:\WINDOWS\System32\OpenSSH\;D:\develop-env\mongoDB\bin;D:\develop-env\nodejs\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;D:\develop applications\VScode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Administrator\AppData\Local\Yarn\Cache\v4\npm-ansi-styles-3.2.1-41fbb20243e50b12be0f04b8dedbf07520ce841d\node_modules\ansi-styles\index.js' -> 'D:\works\cloudDream\node_modules\marked-terminal\node_modules\ansi-styles\index.js'
+
+npm manifest: 
+  {
+    "name": "DreamCloud",
+    "version": "1.0.0",
+    "description": "a cloud editor",
+    "author": "Albatrosses <capitalism_4418@163.com>",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www.js",
+      "dev": "node-dev ./bin/www.js"
+    },
+    "dependencies": {
+      "body-parser": "~1.18.3",
+      "cheerio": "^1.0.0-rc.2",
+      "cookie-parser": "~1.4.4",
+      "debug": "~4.1.1",
+      "ejs": "~2.6.1",
+      "express": "~4.16.4",
+      "fs": "^0.0.2",
+      "iconv-lite": "^0.4.24",
+      "mongodb": "^3.2.2",
+      "mongoose": "^5.4.19",
+      "morgan": "~1.9.1",
+      "multiparty": "^4.2.1",
+      "mysql": "^2.16.0",
+      "nodemailer": "^6.0.0",
+      "nodemailer-smtp-transport": "^2.7.4",
+      "querystring": "^0.2.0",
+      "request": "^2.88.0",
+      "serve-favicon": "~2.5.0"
+    },
+    "devDependencies": {
+      "node-dev": "^3.1.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

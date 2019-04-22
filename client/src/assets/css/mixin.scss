@@ -1,0 +1,10 @@
+@mixin full {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin response ($break-point, $direction: 'max-width') {
+  @media screen and ($direction : $break-point) {
+    @content
+  }
+}

@@ -1,0 +1,38 @@
+/******************************************************************/
+/**
+ * @description 总样式表
+ * @author Jayce pu
+ * @date 2018.11.27
+ */
+/******************************************************************/
+
+// 重置浏览器样式
+@import './normalize';
+// 混入函数
+@import './mixin';
+// 变量
+@import './variables';
+
+html, body {
+  @include full();
+  background: $theme;
+  color: $words;
+}
+html {
+  user-select: none;
+}
+body {
+  font-size: $fontsize-normal;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: $content;
+}
+::-webkit-scrollbar-thumb {
+  background: $content;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $content;
+  border-radius: 20px;
+}
