@@ -1,29 +1,22 @@
 import React from 'react';
-import {
-  ApolloClient,
-  gql,
-  graphql,
-  ApolloProvider,
-} from 'react-apollo';
 import './App.css';
+import { gql, Query } from 'react-apollo';
 
+const channelsListQuery = gql`
+  {
+    toutiao
+  }
+`;
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  componentDidMount() {
-    const client = new ApolloClient();
-    const channelsListQuery = gql`
-      query Query {
-        toutiao
-      }
-    `;
-  }
   render() {
     return (
-      <div className="App">111111</div>
+      <Query query={channelsListQuery}>
+        {({ loading, error, data }) => {
+          return data
+        }}
+      </Query>
     );
   }
 }
 
-export default graphql(channelsListQuery)(ChannelsList)
+export default App
