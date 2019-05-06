@@ -4,7 +4,7 @@ import { gql, Query } from 'react-apollo';
 
 const channelsListQuery = gql`
   {
-    toutiao
+    toutiao 
   }
 `;
 class App extends React.Component {
