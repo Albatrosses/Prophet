@@ -1,4 +1,3 @@
-const router = require('express').Router();
 const { ApolloServer, gql } = require('apollo-server-express');
 
 const graphqlServer = (app) => {
@@ -19,12 +18,6 @@ const graphqlServer = (app) => {
   const server = new ApolloServer({ typeDefs, resolvers });
   
   server.applyMiddleware({ app });
-
-  router.get('/listing', (req, res, err) => {
-    res.json({id: 11111});
-  });
-
-  app.use('/toutiao', router);
   
   app.listen({ port: 4000 }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
