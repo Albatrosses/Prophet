@@ -1,18 +1,12 @@
-const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
+const toutiao = require('./toutiao/index');
 
 const graphqlServer = (app) => {
-  const typeDefs = gql`
-    type Query {
-      toutiao: String
-      weibo: String
-    }
-  `;
-   
+  const typeDefs = [
+    toutiao.typeDefs
+  ];
   const resolvers = {
-    Query: {
-      toutiao: () => '111',
-      weibo: () => 'wo shi aaa'
-    },
+    ...toutiao.resolvers
   };
    
   const server = new ApolloServer({ typeDefs, resolvers });
