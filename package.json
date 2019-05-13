@@ -18,6 +18,7 @@
     "express": "~4.16.4",
     "fs": "^0.0.2",
     "graphql": "^14.2.1",
+    "graphql-import": "^0.7.1",
     "iconv-lite": "^0.4.24",
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.5",
@@ -28,7 +29,9 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
-    "serve-favicon": "~2.5.0"
+    "serve-favicon": "~2.5.0",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
     "node-dev": "^3.1.3"

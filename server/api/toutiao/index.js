@@ -1,5 +1,7 @@
-const typeDefs = require('./typeDefs.graphql');
+const { importSchema } = require('graphql-import');
 const resolvers = require('./resolvers');
+
+const typeDefs = importSchema('typeDefs.graphql');
 
 module.exports = {
   typeDefs,
