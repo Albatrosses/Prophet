@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"outDir": "build",
+		"lib": [
+			"es6"
+		]
+	},
+	"include": [
+		"*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"client"
+	]
+}
