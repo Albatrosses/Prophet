@@ -1,13 +1,7 @@
-const { ApolloServer } = require('apollo-server-express');
-const toutiao = require('./toutiao/index');
+import { ApolloServer } from 'apollo-server-express';
+import { typeDefs, resolvers} from './userInfo/';
 
 const graphqlServer = (app) => {
-  const typeDefs = [
-    toutiao.typeDefs
-  ];
-  const resolvers = {
-    ...toutiao.resolvers
-  };
    
   const server = new ApolloServer({ typeDefs, resolvers });
   
@@ -18,4 +12,4 @@ const graphqlServer = (app) => {
   );
 };
 
-module.exports = graphqlServer;
+export default graphqlServer;

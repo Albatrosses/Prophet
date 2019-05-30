@@ -7,8 +7,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = __importStar(require("express"));
-var router = express.Router();
+const express = __importStar(require("express"));
+const router = express.Router();
 router.get('/', function (req, res, next) {
     res.render('index');
 });

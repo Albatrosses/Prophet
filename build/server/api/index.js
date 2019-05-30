@@ -1,25 +1,10 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const apollo_server_express_1 = require("apollo-server-express");
+const userInfo_1 = require("./userInfo/");
+const graphqlServer = (app) => {
+    const server = new apollo_server_express_1.ApolloServer({ typeDefs: userInfo_1.typeDefs, resolvers: userInfo_1.resolvers });
+    server.applyMiddleware({ app });
+    app.listen({ port: 4000 }, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));
 };
-var ApolloServer = require('apollo-server-express').ApolloServer;
-var toutiao = require('./toutiao/index');
-var graphqlServer = function (app) {
-    var typeDefs = [
-        toutiao.typeDefs
-    ];
-    var resolvers = __assign({}, toutiao.resolvers);
-    var server = new ApolloServer({ typeDefs: typeDefs, resolvers: resolvers });
-    server.applyMiddleware({ app: app });
-    app.listen({ port: 4000 }, function () {
-        return console.log("\uD83D\uDE80 Server ready at http://localhost:4000" + server.graphqlPath);
-    });
-};
-module.exports = graphqlServer;
+exports.default = graphqlServer;

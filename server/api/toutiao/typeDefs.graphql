@@ -1,3 +1,0 @@
-type getNewsListing {
-  news_name
-}

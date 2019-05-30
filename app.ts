@@ -1,30 +1,30 @@
 import debugServer from 'debug';
 const debug = debugServer('demo:server');
 import * as http from 'http';
-import * as express from 'express';
+import express from 'express';
 import * as path from 'path';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import route from './server/route/';
 import ejs from 'ejs';
-// const graphqlServer = require('./server/api/');
+import graphqlServer from './server/api/index';
 
 const app = express();
-
-app.set('views', path.join(__dirname, 'views/'));
+app.set('views', path.join(__dirname, '../views/'));
 app.engine('.html', ejs.__express);
+app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/')));
 app.use('/', route);
-// graphqlServer(app);
+graphqlServer(app);
 
 app.use(function(req, res, next) {
-  const err = new Error('Not Found')
-  err.status = 404
+  const err = new Error('Not Found');
+  // err.status = 404;
   next(err)
 });
 

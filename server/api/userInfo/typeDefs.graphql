@@ -1,0 +1,13 @@
+schema query {
+  query: Query
+}
+
+type Query {
+  userInfo(name: String): userInfo
+}
+
+type userInfo {
+  name: String!,
+  age: Number,
+  sex: String
+}
