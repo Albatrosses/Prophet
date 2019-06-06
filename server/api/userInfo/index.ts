@@ -1,25 +1,11 @@
 import resolvers from './resolvers';
-import { gql } from 'apollo-server-express';
+import { importSchema } from 'graphql-import';
 
-export const typeDefs = gql`
-  type Query {
-    getUserInfo(id: Int): UserInfo
-  }
-  
-  type UserInfo {
-    id: Int!,
-    name: String,
-    isViewerFriend: Boolean,
-    getProfilePicture(size: Int): profilePicture
-  }
+const collectiveSchema: any = importSchema(process.cwd() + '/schemas/collectiveSchema.graphql');
 
-  type profilePicture {
-    uri: String,
-    width: Int,
-    height: Int
-  }
-`;
+const typeDefs: Array<any> = [collectiveSchema];
 
 export {
-  resolvers
+  resolvers,
+  typeDefs
 };

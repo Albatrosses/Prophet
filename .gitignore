@@ -4,3 +4,5 @@ npm-debug.log
 nbproject
 client/node_modules
 build
+*.log
+.vscode
