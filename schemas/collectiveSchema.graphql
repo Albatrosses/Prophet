@@ -1,20 +1,9 @@
-schema {
-  query: Query
-}
+# import listingWeiBoSchema from './listingWeiBoSchema.graphql';
 
 type Query {
-  getUserInfo(id: Int): UserInfo
+  getListingWeiBo(count: Int): ListingWeiBo
 }
 
-type UserInfo {
-  id: Int!,
-  name: String,
-  isViewerFriend: Boolean,
-  getProfilePicture(size: Int): profilePicture
-}
-
-type profilePicture {
-  uri: String,
-  width: Int,
-  height: Int
+schema {
+  query: Query
 }
