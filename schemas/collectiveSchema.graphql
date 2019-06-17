@@ -1,7 +1,7 @@
 # import listingWeiBoSchema from './listingWeiBoSchema.graphql';
 
 type Query {
-  getListingWeiBo(count: Int): ListingWeiBo
+  getListingWeiBo(count: Int): [ListingWeiBo]
 }
 
 schema {

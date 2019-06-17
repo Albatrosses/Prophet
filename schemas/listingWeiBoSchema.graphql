@@ -1,3 +1,4 @@
 type ListingWeiBo {
-	title: String!
+	title: String!,
+	description: String!
 }
