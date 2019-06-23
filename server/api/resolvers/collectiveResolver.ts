@@ -1,7 +1,7 @@
 import queryResolver from "./queryResolver";
 
 const collectiveResolver: any = {
-	Query: queryResolver
+	...queryResolver
 }
 
 export default collectiveResolver;

@@ -1,4 +1,0 @@
-type ListingWeiBo {
-	title: String!,
-	description: String!
-}

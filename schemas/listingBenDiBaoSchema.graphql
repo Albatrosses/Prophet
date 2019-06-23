@@ -1,0 +1,18 @@
+type ListingBenDiBao {
+	link: String,
+	point: String,
+	expand: Boolean,
+	detail: DetailBenDiBao
+}
+
+type DetailBenDiBao {
+	title: String,
+	date: String,
+	lead: String,
+	content: String
+}
+
+type ContentBenDiBao {
+	text: String,
+	image: String
+}
