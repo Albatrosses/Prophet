@@ -1,19 +1,22 @@
 import * as React from 'react';
 import { Menu } from 'antd';
 
-class NavPanel extends React.Component {
+interface IProps {
+  className?: string;
+}
+export default class NavPanel extends React.Component<IProps, any> {
   public render() {
+    const { className } = this.props;
     return (
       <Menu
         theme="dark"
-        mode="inline">
-        <Menu.Item>菜单项</Menu.Item>
-        <Menu.SubMenu title="子菜单">
-          <Menu.Item>子菜单项</Menu.Item>
+        mode="inline"
+        className={className}>
+        <Menu.Item>仪表盘</Menu.Item>
+        <Menu.SubMenu title="新闻类">
+          <Menu.Item>西安本地宝</Menu.Item>
         </Menu.SubMenu>
       </Menu>
     );
   }
-}
-
-export default NavPanel;
+};
