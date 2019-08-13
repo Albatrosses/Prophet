@@ -1,11 +1,11 @@
 {
   "name": "Prophet",
-  "version": "1.0.0",
-  "description": "a cloud editor",
+  "version": "0.0.1",
+  "description": "Hybrid Crawler system",
   "author": "Albatrosses <capitalism_4418@163.com>",
   "private": true,
   "scripts": {
-    "start": "node ./build/app.js",
+    "server": "node ./build/app.js",
     "build": "tsc -wa",
     "dev": "nodemon -e ts --exec \"tsc && node ./build/app.js\""
   },
