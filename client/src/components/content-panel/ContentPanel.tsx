@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { ContentPanelStyle } from './ContentPanel.style';
+import AccountPanel from './account-panel/AccountPanel';
+import BreadCrumbs from './bread-crumbs/BreadCrumbs';
+import ContentListing from './content-listing/ContentListing';
 
 interface IProps {
 	className?: string;
@@ -11,8 +14,9 @@ export default class ContentPanel extends React.Component<IProps, any> {
 
 		return (
 			<ContentPanelStyle className={className}>
-				<section className="bread-crumbs">我是面包屑</section>
-				<section className="content-listing">我是内容</section>
+				<AccountPanel className="account-panel" />
+				<BreadCrumbs className="bread-crumbs" />
+				<ContentListing className="content-listing" />
 			</ContentPanelStyle>
 		);
 	}

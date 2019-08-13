@@ -12,7 +12,7 @@ export default class NavPanel extends React.Component<IProps, any> {
         theme="dark"
         mode="inline"
         className={className}>
-        <Menu.Item>仪表盘</Menu.Item>
+        <Menu.Item>汇总</Menu.Item>
         <Menu.SubMenu title="新闻类">
           <Menu.Item>西安本地宝</Menu.Item>
         </Menu.SubMenu>
