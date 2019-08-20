@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ContentPanelStyle } from './ContentPanel.style';
-import AccountPanel from './account-panel/AccountPanel';
 import BreadCrumbs from './bread-crumbs/BreadCrumbs';
 import ContentListing from './content-listing/ContentListing';
 
@@ -14,7 +13,6 @@ export default class ContentPanel extends React.Component<IProps, any> {
 
 		return (
 			<ContentPanelStyle className={className}>
-				<AccountPanel className="account-panel" />
 				<BreadCrumbs className="bread-crumbs" />
 				<ContentListing className="content-listing" />
 			</ContentPanelStyle>
