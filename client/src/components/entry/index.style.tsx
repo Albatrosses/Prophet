@@ -1,13 +1,26 @@
-import styled from 'styled-components';
+import { CSSProperties } from 'react';
 
-export const Body = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  .nav-panel {
-    flex: 0 0 200px;
-  }
-  .content-panel {
-    flex: auto;
-  }
-`;
+export const EntryStyle: CSSProperties = {
+  "display": "flex",
+  "flexDirection": "column",
+  "height": "100%",
+  "width": "100%"
+};
+
+export const HeaderStyle: CSSProperties = {
+  "flex": "0 0 30px"
+};
+
+export const BodyerStyle: CSSProperties = {
+  "display": "flex",
+  "height": "100%",
+  "width": "100%"
+};
+
+export const NavPanelStyle: CSSProperties = {
+  "flex": "0 0 200px"
+};
+
+export const ContentPanelStyle: CSSProperties = {
+  "flex": "auto"
+};

@@ -7,7 +7,7 @@
   "scripts": {
     "server": "node ./build/app.js",
     "build": "tsc -wa",
-    "dev": "nodemon -e ts --exec \"tsc && node ./build/app.js\""
+    "dev": "PORT=18080 nodemon -e ts --exec \"tsc && node ./build/app.js\""
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
