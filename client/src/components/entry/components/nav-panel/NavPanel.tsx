@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Menu } from 'antd';
 
-export const NavPanel: React.FC<any> = () => {
+export const NavPanel: React.FC<any> = (props) => {
+  const { style } = props;
   return (
     <Menu
+      style={style}
       theme="dark"
       mode="inline">
       <Menu.Item>汇总</Menu.Item>

@@ -8,7 +8,11 @@ export const EntryStyle: CSSProperties = {
 };
 
 export const HeaderStyle: CSSProperties = {
-  "flex": "0 0 30px"
+  "background": "#001529",
+  "color": "#ffffff",
+  "flex": "0 0 30px",
+  "textAlign": "center",
+  "verticalAlign": "middle"
 };
 
 export const BodyerStyle: CSSProperties = {
