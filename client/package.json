@@ -5,7 +5,7 @@
   "author": "Albatrosses <capitalism_4418@163.com>",
   "private": true,
   "scripts": {
-    "dev": "PORT=18081 node scripts/start.js",
+    "dev": "node scripts/start.js PORT=18081",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
