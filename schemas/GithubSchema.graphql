@@ -1,0 +1,15 @@
+type GithubCommitList {
+	commit: String
+}
+
+type Commit { 
+	description: String,
+	author: Author,
+	date: String,
+	code: String
+}
+
+type Author {
+	name: String,
+	avatar: String!,
+}

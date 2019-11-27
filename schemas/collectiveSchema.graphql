@@ -1,7 +1,7 @@
-# import ListingBenDiBaoSchema from './ListingBenDiBaoSchema.graphql';
+# import GithubSchema from './GithubSchema.graphql';
 
 type Query {
-  getListingBenDiBao(expandArray: [Int]): [ListingBenDiBao]
+  githubCommitList: GithubCommitList
 }
 
 schema {
