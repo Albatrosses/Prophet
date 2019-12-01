@@ -1,0 +1,11 @@
+# import GithubSchema from './GithubSchema.graphql';
+# import ProxySchema from './ProxySchema.graphql';
+
+type Query {
+  githubCommitList: GithubCommitList
+  proxy: Proxy
+}
+
+schema {
+  query: Query
+}
