@@ -7,9 +7,10 @@
   "scripts": {
     "server": "node ./build/app.js",
     "build": "tsc -wa",
-    "dev": "nodemon -e ts --exec \"tsc && node ./build/app.js\" PORT=18080"
+    "dev": "nodemon -e ts --exec \"tsc && node ./app.js\" PORT=18080"
   },
   "dependencies": {
+    "@types/request": "^2.48.3",
     "apollo-server-express": "^2.4.8",
     "body-parser": "~1.19.0",
     "cheerio": "^1.0.0-rc.3",
@@ -24,12 +25,13 @@
     "morgan": "~1.9.1",
     "nodemon": "^1.19.0",
     "puppeteer": "^2.0.0",
+    "request": "^2.88.0",
     "typescript": "^3.7.2"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
     "@types/graphql": "^14.2.0",
     "@types/node": "^12.0.2",
-    "@types/puppeteer": "^2.0.0",
+    "@types/puppeteer": "^2.0.0"
   }
 }
