@@ -1,5 +1,5 @@
 import { ApolloServer } from 'apollo-server-express';
-import resolvers from './resolvers/collectiveResolver';
+import resolvers from './resolvers/queryResolver';
 import { importSchema } from 'graphql-import';
 
 const collectiveSchema: any = importSchema(process.cwd() + '/schemas/collectiveSchema.graphql');
