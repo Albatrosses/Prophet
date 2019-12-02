@@ -2,6 +2,7 @@
   "domain": "https://tsocks.tpcontrol.net",
   "loginPath": "/auth/login",
   "mainPath": "/user",
+  "checkInPath": "/user/checkin",
   "username": "capitalism_4418@163.com",
   "password": "dollar00"
 }

@@ -1,4 +1,8 @@
 type Proxy {
-	message: String,
-  status: Boolean
+	used: String,
+  usedPercentage: String,
+  remain: String,
+  remainPercentage: String,
+  daily: String,
+  dailyPercentage: String
 }
