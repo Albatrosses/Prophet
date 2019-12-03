@@ -4,5 +4,7 @@ type Proxy {
   remain: String,
   remainPercentage: String,
   daily: String,
-  dailyPercentage: String
+  dailyPercentage: String,
+  node1: String,
+  node2: String
 }

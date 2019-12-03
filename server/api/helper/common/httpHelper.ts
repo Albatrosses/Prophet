@@ -16,11 +16,19 @@ export enum Headers {
   cookie = "cookie"
 };
 
+type TCookie = {
+  name: string,
+  value: string,
+  domain?: string,
+  url?: string
+}
+
 type THeaders = {
   [Headers.contentType]?: string,
   [Headers.cookie]?: string,
-  [propName: string]: any;
+  [propName: string]: any
 };
+
 
 type TOption = {
   uri: string,
@@ -29,6 +37,14 @@ type TOption = {
   qs?: any,
   body?: any
 };
+
+export const generateCookieObject = (cookie: string, url: string): TCookie[] => {
+  return cookie.replace(/\;/g, "").split(" ").map(cookie => ({
+    name: cookie.split("=")[0],
+    value: cookie.split("=")[1],
+    url
+  }));
+}
 
 export const requestHttp = (option: TOption): any => {
   return new Promise((reslove: any, reject: any) => {

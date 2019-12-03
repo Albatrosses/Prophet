@@ -3,6 +3,6 @@ import helperMaps from "../../helper";
 
 export const proxyQuery = async () => {
   const proxy = helperMaps.getModule(ModuleName.proxy);
-	const result = await proxy.getContent();
+	const result = await proxy.query();
 	return result;
 }

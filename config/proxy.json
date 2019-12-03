@@ -3,6 +3,7 @@
   "loginPath": "/auth/login",
   "mainPath": "/user",
   "checkInPath": "/user/checkin",
+  "nodePath": "/user/node",
   "username": "capitalism_4418@163.com",
   "password": "dollar00"
 }

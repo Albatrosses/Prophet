@@ -12,22 +12,29 @@ type TContent = {
   dailyPercentage: string
 };
 
+type TNodes = {
+  node1: string,
+  node2: string
+}
+
 class ProxyDomain {
   private domain: string; 
   private loginPath: string;
   private mainPath: string;
   private checkInPath: string;
+  private nodePath: string;
   private username: string;
   private password: string;
   private isLogin: boolean;
   private isCheckIn: boolean;
   private cookie: string;
   constructor() {
-    const { domain, loginPath, mainPath, checkInPath, username, password } = getConfig(ModuleName.proxy);
+    const { domain, loginPath, mainPath, checkInPath, nodePath, username, password } = getConfig(ModuleName.proxy);
     this.domain = domain;
     this.loginPath = loginPath;
     this.mainPath = mainPath;
     this.checkInPath = checkInPath;
+    this.nodePath = nodePath;
     this.username = username;
     this.password = password;
     this.isLogin = false;
@@ -35,8 +42,17 @@ class ProxyDomain {
     this.cookie = "";
   }
 
-  public async getContent(): Promise<TContent> {
+  public async query(): Promise<TContent & TNodes> {
     await this.verify();
+    const content = await this.getContent();
+    const nodes = await this.getNodes();
+    return {
+      ...content,
+      ...nodes
+    }
+  }
+
+  private async getContent(): Promise<TContent> {
     const uri = `${this.domain}${this.mainPath}`;
     const statList = await getElement({
       uri,
@@ -53,6 +69,39 @@ class ProxyDomain {
       remainPercentage,
       daily,
       dailyPercentage
+    }
+  }
+
+  private async getNodes(): Promise<TNodes> {
+    const uri = `${this.domain}${this.nodePath}`;
+    const nodeList = await getElement({
+      uri,
+      headers: {
+        cookie: this.cookie
+      }
+    }, ".ibox-content .border-bottom a");
+    const [node1Url, node2Url] = nodeList.toArray().map(node => {
+      const [qs, ismu, relay_rule] = node.attribs.onclick.match(/\d+/g);
+      return `${uri}/${qs}?ismu=${ismu}&relay_rule=${relay_rule}`;
+    });
+    const elementList = await Promise.all([
+      getElement({
+        uri: node1Url,
+        headers: {
+          cookie: this.cookie
+        }
+      }, "html"),
+      getElement({
+        uri: node2Url,
+        headers: {
+          cookie: this.cookie
+        }
+      }, "html")
+    ]);
+    const [node1, node2] = elementList.map(element => element.html().match(/ssr\:\/\/.+\'/g)[0].replace(/\\\'/g, ""))
+    return {
+      node1,
+      node2
     }
   }
 
@@ -116,7 +165,7 @@ class ProxyDomain {
   private parseCookie(res: any): string {
     const cookieArray = get(res, `headers['set-cookie']`, []);
     const cookie = map(cookieArray, cookieItem => cookieItem.split(" ")[0]).join(" ");
-    return cookie
+    return cookie;
   }
 }
 
