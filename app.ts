@@ -8,19 +8,40 @@ import cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import route from './server/route/';
 import ejs from 'ejs';
-import graphqlServer from './server/api/index';
+import { Server } from "http";
+
+class App {
+  private app: express.Application;
+  private server: Server; 
+  constructor() {
+    this.app = express();
+    this.server = http.createServer(this.app);
+    this.register();
+    this.errorHandler();
+    this.logger();
+    this.start();
+  }
+
+  private register() {
+    this.app.use("/", );
+  }
+
+  private errorHandler() {}
+
+  private logger() {
+    this.server.on("listening", () => {
+      console.log("pujunhao: ", port);
+    });
+  }
+
+  private start() {
+    const port = process.env.PORT || 18080
+    this.app.set("port", port);
+    this.server.listen(port);
+  }
+}
 
 const app = express();
-app.set('views', path.join(__dirname, '../views/'));
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../views/')));
-app.use('/', route);
-graphqlServer(app);
 
 app.use(function(req, res, next) {
   const err = new Error('Not Found');
